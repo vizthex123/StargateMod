@@ -20,17 +20,11 @@ namespace Stargate.Items.Weapons
             item.maxStack = 1;
             //item.value = Item.sellPrice(0, 1, 0, 0);
             item.rare = 3;
-			/*
-			item.ranged = true;
-			item.useAmmo = mod.ItemType("LiquidNaqudah");
+			item.summon = true;
 			item.damage = 16;
-			item.knockBack = 2;
-		    item.shoot = 10;
-		    item.shootSpeed = 8;
-			item.useAnimation = 10;
-			item.useStyle = 5;
-			item.scale = 1f;
-			*/
+			item.knockBack = 5;
+			item.buffType = BuffType<DeathGlider>();
+			item.shoot = ProjectileType<GliderLaser>();
         }
 
         public override void AddRecipes()
