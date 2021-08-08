@@ -5,11 +5,11 @@ using Microsoft.Xna.Framework;
 
 namespace Stargate.Items.GoauldParts
 {
-    public class GoauldCasing : ModItem
+    public class NaquadahCasing : ModItem
     {
         public override void SetStaticDefaults()
         {
-			DisplayName.SetDefault("Goa'uld Casing");
+			DisplayName.SetDefault("Naquadah Casing");
             Tooltip.SetDefault("Casing used to hold Goa'uld devices and batteries.");
         }
 

@@ -10,7 +10,7 @@ namespace Stargate.Items.Accessories
         public override void SetStaticDefaults()
         {
 			DisplayName.SetDefault("Goa'uld Healing Device");
-            Tooltip.SetDefault("A handheld device made by the Goa'uld that helps heal wounds.\nGives +2.5 Life Regen per second when equipped.");
+            Tooltip.SetDefault("A handheld device made by the Goa'uld that helps heal wounds.\nFive times as fast as a Band of Regeneration.");
         }
 
         public override void SetDefaults()
