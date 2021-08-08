@@ -10,7 +10,7 @@ namespace Stargate.Items.UniversalParts
         public override void SetStaticDefaults()
         {
 			DisplayName.SetDefault("Circuit");
-            Tooltip.SetDefault("Some circuitry that can be used for a variety of things.");
+            Tooltip.SetDefault("Some circuitry that can be used for a variety of things.\nA commanality between every species.");
         }
 
         public override void SetDefaults()
@@ -27,6 +27,13 @@ namespace Stargate.Items.UniversalParts
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.CopperBar, 3);
 			recipe.AddIngredient(ItemID.GoldBar, 1);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this, 3);
+			recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.TinBar, 3);
+			recipe.AddIngredient(ItemID.PlatinumBar, 1);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this, 3);
 			recipe.AddRecipe();

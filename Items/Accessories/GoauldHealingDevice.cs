@@ -10,7 +10,7 @@ namespace Stargate.Items.Accessories
         public override void SetStaticDefaults()
         {
 			DisplayName.SetDefault("Goa'uld Healing Device");
-            Tooltip.SetDefault("A handheld device made by the Goa'uld that helps heal wounds.\nFive times as fast as a Band of Regeneration.");
+            Tooltip.SetDefault("A handheld device made by the Goa'uld that helps heal wounds.\nHeals five times as fast as a Band of Regeneration.");
         }
 
         public override void SetDefaults()
@@ -24,8 +24,8 @@ namespace Stargate.Items.Accessories
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-			// Band of Regen is 1
 			player.lifeRegen += 5;
+			// Band of Regen is 1
         }
         public override void AddRecipes()
         {

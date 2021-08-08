@@ -10,7 +10,7 @@ namespace Stargate.Items.Accessories
         public override void SetStaticDefaults()
         {
 			DisplayName.SetDefault("Zero-Point Speed Booster");
-            Tooltip.SetDefault("Harnesses Zero-Point Energy to dilate time so the user moves faster\nWhen equipped, it will boost movement speed by 10%");
+            Tooltip.SetDefault("Harnesses Zero-Point Energy to dilate time so the user moves faster\n+10% Movement Speed");
         }
 
         public override void SetDefaults()

@@ -10,7 +10,7 @@ namespace Stargate.Items.Accessories
         public override void SetStaticDefaults()
         {
 			DisplayName.SetDefault("Bulletproof Vest");
-            Tooltip.SetDefault("Reinforced Kevlar that blocks some damage.\nWhen equipped, it gives +5 Defense");
+            Tooltip.SetDefault("Reinforced Kevlar that blocks some damage.\n+5 Defense");
         }
 
         public override void SetDefaults()

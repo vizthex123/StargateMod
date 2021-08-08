@@ -10,7 +10,7 @@ namespace Stargate.Items.Accessories
         public override void SetStaticDefaults()
         {
 			DisplayName.SetDefault("Goa'uld Health Booster");
-            Tooltip.SetDefault("A device made by the Goa'uld that increases your longevity when implanted into one's heart\nWhen equipped, gives +50 Max HP\nSlightly increases life regen");
+            Tooltip.SetDefault("A device made by the Goa'uld that increases your longevity when implanted into one's heart\n+50 Max HP while equipped\nSlightly increases life regen");
         }
 
         public override void SetDefaults()

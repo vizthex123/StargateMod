@@ -20,9 +20,9 @@ namespace Stargate.Items.Weapons
             item.maxStack = 1;
             //item.value = Item.sellPrice(0, 1, 0, 0);
             item.rare = 3;
-			item.summon = true;
 			item.damage = 16;
 			item.knockBack = 5;
+			item.summon = true;
 			item.buffType = BuffType<DeathGlider>();
 			item.shoot = ProjectileType<GliderLaser>();
         }
@@ -30,8 +30,15 @@ namespace Stargate.Items.Weapons
         public override void AddRecipes()
         {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.GetItem("Naquadah"), 10);
+			recipe.AddIngredient(mod.GetItem("NaquadahBar"), 10);
 			recipe.AddIngredient(ItemID.IronBar, 8);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+			
+			recipe = new ModRecipe(mod);
+			recipe.AddIngredient(mod.GetItem("NaquadahBar"), 10);
+			recipe.AddIngredient(ItemID.LeadBar, 8);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
