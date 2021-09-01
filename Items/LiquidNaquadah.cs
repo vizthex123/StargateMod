@@ -3,29 +3,31 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 
-namespace Stargate.Items
+namespace Stargate.Items//.Ammo
 {
-    public class NaquadahBar : ModItem
+    public class LiquidNaquadah : ModItem
     {
         public override void SetStaticDefaults()
         {
-			DisplayName.SetDefault("Weapons-Grade Naquadah");
-            Tooltip.SetDefault("A rare, super-dense mineral used for all Ancient and Goa'uld technology.\nRefined enough to be used in weaponry.\nDoesn't pack well");
+			DisplayName.SetDefault("Liquid Naquadah");
+            Tooltip.SetDefault("Naquadah that has been melted down\nCan be used to power Ma'Tok Staves and Naquadah Generators");
         }
 
         public override void SetDefaults()
         {
             Item.width = 20;
             Item.height = 20;
-            Item.maxStack = 10;
+            Item.maxStack = 999;
+			//Item.ammo = Item.type;
             Item.rare = ItemRarityID.Green;
-			Item.value = Item.sellPrice(gold: 1);
+			Item.value = Item.sellPrice(gold: 2);
         }
 
         public override void AddRecipes()
         {
 			CreateRecipe(3)
-				.AddIngredient<Naquadah>(25)
+				.AddIngredient<Naquadah>(6)
+				.AddIngredient(ItemID.LavaBucket, 1)
 			// .AddTile(mod.TileType("NaquadahRefiner"))
 				.AddTile(TileID.Hellforge)
 				.Register();

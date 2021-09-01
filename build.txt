@@ -2,3 +2,4 @@ displayName = The Stargate Mod
 author = vizthex
 version = 1.0
 homepage = https://github.com/vizthex123/StargateMod
+buildIgnore = .gitignore, .git, .md, .txt, .xcf

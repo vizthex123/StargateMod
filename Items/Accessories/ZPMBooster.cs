@@ -15,36 +15,27 @@ namespace Stargate.Items.Accessories
 
         public override void SetDefaults()
         {
-            item.width = 20;
-            item.height = 20;
-            item.maxStack = 1;
-            //item.value = Item.sellPrice(1, 0, 0, 0);
-            item.rare = 5;
-			item.accessory = true;
+            Item.width = 20;
+            Item.height = 20;
+            Item.maxStack = 1;
+			Item.accessory = true;
+            Item.rare = ItemRarityID.Green;
+			Item.value = Item.sellPrice(gold: 1);
         }
+		
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
 			player.moveSpeed += 0.10f;
         }
+		
         public override void AddRecipes()
         {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.GetItem("ZPMCasing"), 1);
-			recipe.AddIngredient(mod.GetItem("ZPM"), 1);
-			recipe.AddTile(TileID.Anvils);
-			//recipe.AddTile(mod.TileType("AncientCrafter"));
-			// Basically a table used to craft Ancient items, same ones apply to each faction. Can combine them all into one (Hybrid Tables, each with different combos [Human/Asgard, Human/Goa'uld, etc.]) later.
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			CreateRecipe(1)
+				.AddIngredient<ZPMCasing>(1)
+				.AddIngredient<ZPM>(1)
+			 //.AddTile(mod.TileType("AncientCrafter"))
+				.AddTile(TileID.Anvils)
+				.Register();
         }
     }
 }
-
-// Used for Hardmode stuff
-// Can be found - Still WIP
-/* Crystals:
-Yellow - Buffer
-Red - Control
-Green - Auxiliary
-Orange - Regular (Crystal)
-*/

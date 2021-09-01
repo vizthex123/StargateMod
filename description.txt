@@ -1,11 +1,14 @@
-The Stargate Mod is a passion project I started (despite knowing very limited C#) because I love the Stargate franchise and wanted to add some stuff to Terraria themed around it.
+I made this mod because I love the Stargate franchise, and thought it would be cool to have a Terraria mod for it.
 
-The actual Stargates will take a long time to be implemented (might not even be added at all) because of my limited knowledge of modding, but you can build a themed one with different blocks and teleporters.
+It's still fairly WIP, but it does add a couple of useful accessories at the moment.
 
-Now, onto the content! (Full list on homepage)
+I plan to add the main things from each faction in the show (Ancients, Goa'uld, Tau'ri (humans), and perhaps a few others)
 
+Full content list:
 
-Several crafting items.
-4 Accessories (Max HP, Life Regen Boost, extra Defense, etc.!)
-1 heavily WIP weapon
+Several crafting items
+4 Accessories (Health & Defense for now)
+1 tool (pickaxe)
+2 heavily WIP weapons
+1 heavily WIP minion
 1 new ammo type (currently useless other than as a crafting component)

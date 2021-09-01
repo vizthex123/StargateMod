@@ -1,3 +1,4 @@
+/*
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -29,20 +30,14 @@ namespace Stargate.Items.Weapons
 
         public override void AddRecipes()
         {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.GetItem("NaquadahBar"), 10);
-			recipe.AddIngredient(ItemID.IronBar, 8);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.GetItem("NaquadahBar"), 10);
-			recipe.AddIngredient(ItemID.LeadBar, 8);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			CreateRecipe(1)
+				.AddIngredient<NaquadahBar>(10)
+				.AddRecipeGroup(RecipeGroupID.IronBar, 8)
+			 //.AddTile(mod.TileType("GoauldCrafter"))
+				.AddTile(TileID.Anvils)
+				.Register()
         }
     }
 }
 // Still heavily WIP because idk how to program weapons and projectiles and whatnot.
+*/

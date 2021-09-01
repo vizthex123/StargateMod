@@ -10,35 +10,35 @@ namespace Stargate.Items.Accessories
         public override void SetStaticDefaults()
         {
 			DisplayName.SetDefault("Goa'uld Health Booster");
-            Tooltip.SetDefault("A device made by the Goa'uld that increases your longevity when implanted into one's heart\n+50 Max HP while equipped\nSlightly increases life regen");
+            Tooltip.SetDefault("A device made by the Goa'uld that increases your longevity when implanted into one's heart\n+50 Max HP while equipped\nHeals wounds slightly slower than a Healing Device");
         }
 
         public override void SetDefaults()
         {
-            item.width = 20;
-            item.height = 20;
-            item.maxStack = 1;
-            //item.value = Item.sellPrice(1, 0, 0, 0);
-            item.rare = 5;
-			item.accessory = true;
+            Item.width = 20;
+            Item.height = 20;
+            Item.maxStack = 1;
+			Item.accessory = true;
+            Item.rare = ItemRarityID.Orange;
+			Item.value = Item.sellPrice(gold: 1);
         }
+		
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
 			player.statLifeMax2 += 50;
 			player.lifeRegen += 3;
 			// Band of Regen is 1
         }
+		
         public override void AddRecipes()
         {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.GetItem("Naquadah"), 25);
-			recipe.AddIngredient(mod.GetItem("LiquidNaquadah"), 15);
-			recipe.AddIngredient(mod.GetItem("GoauldHealingDevice"), 1);
-			recipe.AddTile(TileID.Anvils);
-			//recipe.AddTile(mod.TileType("GoauldCrucible"));
-			// A vat of magical science that makes Goa'uld technology
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			CreateRecipe(1)
+				.AddIngredient<Naquadah>(25)
+				.AddIngredient<LiquidNaquadah>(15)
+				.AddIngredient<GoauldHealingDevice>(1)
+			//	.AddTile(mod.TileType("GoauldCrafter"))
+				.AddTile(TileID.Anvils)
+				.Register();
         }
     }
 }

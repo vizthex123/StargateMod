@@ -3,38 +3,38 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 
-namespace Stargate.Items.Accessories
+namespace Stargate.Items//.LanteanParts
 {
-    public class GoauldHealingDevice : ModItem
+    public class ZPMCasing : ModItem
     {
         public override void SetStaticDefaults()
         {
-			DisplayName.SetDefault("Goa'uld Healing Device");
-            Tooltip.SetDefault("A handheld device made by the Goa'uld that helps heal wounds.\nHeals woulds five times as fast as a Band of Regeneration.");
+			DisplayName.SetDefault("Zero-Point Casing");
+            Tooltip.SetDefault("Secures Zero-Point modules so they can be used without problems arising");
         }
 
         public override void SetDefaults()
         {
             Item.width = 20;
             Item.height = 20;
-            Item.maxStack = 1;
-			Item.accessory = true;
+            Item.maxStack = 10;
             Item.rare = ItemRarityID.Green;
 			Item.value = Item.sellPrice(gold: 1);
         }
-		
-        public override void UpdateAccessory(Player player, bool hideVisual)
-        {
-			player.lifeRegen += 5;
-			// Band of Regen is 1
-        }
-		
+
         public override void AddRecipes()
         {
 			CreateRecipe(1)
-				.AddIngredient<Naquadah>(10)
-				.AddIngredient<NaquadahCasing>(1)
-			//	.AddTile(mod.TileType("GoauldCrafter"))
+				.AddIngredient(ItemID.SilverBar, 5)
+				.AddIngredient<Crystal>(1)
+			 //.AddTile(mod.TileType("AncientCrafter"))
+				.AddTile(TileID.Anvils)
+				.Register();
+			
+			CreateRecipe(1)
+				.AddIngredient(ItemID.TungstenBar, 5)
+				.AddIngredient<Crystal>(1)
+			 //.AddTile(mod.TileType("AncientCrafter"))
 				.AddTile(TileID.Anvils)
 				.Register();
         }

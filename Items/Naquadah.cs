@@ -15,40 +15,37 @@ namespace Stargate.Items
 
         public override void SetDefaults()
         {
-            item.width = 20;
-            item.height = 20;
-            item.maxStack = 99;
-            //item.value = Item.sellPrice(0, 1, 0, 0);
-            item.rare = 1;
+            Item.width = 20;
+            Item.height = 20;
+            Item.maxStack = 99;
+            Item.rare = ItemRarityID.Blue;
+			Item.value = Item.sellPrice(gold: 1);
         }
 
         public override void AddRecipes()
         {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.CopperOre, 3);
-			recipe.AddIngredient(ItemID.IronOre, 3);
-			recipe.AddIngredient(ItemID.SilverOre, 3);
-			recipe.AddIngredient(ItemID.GoldOre, 3);
-			recipe.AddTile(TileID.Furnaces);
-			recipe.SetResult(this, 3);
-			recipe.AddRecipe();
+			CreateRecipe(3)
+				.AddIngredient(ItemID.CopperOre, 3)
+				.AddIngredient(ItemID.IronOre, 3)
+				.AddIngredient(ItemID.SilverOre, 3)
+				.AddIngredient(ItemID.GoldOre, 3)
+				.AddTile(TileID.Furnaces)
+				.Register();
 			
-			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.TinOre, 3);
-			recipe.AddIngredient(ItemID.LeadOre, 3);
-			recipe.AddIngredient(ItemID.TungstenOre, 3);
-			recipe.AddIngredient(ItemID.PlatinumOre, 3);
-			recipe.AddTile(TileID.Furnaces);
-			recipe.SetResult(this, 3);
-			recipe.AddRecipe();
+			CreateRecipe(3)
+				.AddIngredient(ItemID.TinOre, 3)
+				.AddIngredient(ItemID.LeadOre, 3)
+				.AddIngredient(ItemID.TungstenOre, 3)
+				.AddIngredient(ItemID.PlatinumOre, 3)
+				.AddTile(TileID.Furnaces)
+				.Register();
 			
-			
+			/*
 			// Swap between ore varients
-			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.CopperOre);
-			recipe.AddTile(TileID.Bottles);
-			recipe.SetResult(ItemID.TinOre);
-			recipe.AddRecipe();
+			CreateRecipe(ItemID.TinOre, 1)
+				.AddIngredient(ItemID.CopperOre)
+				.AddTile(TileID.Bottles)
+				.Register();
 			
 			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.TinOre);
@@ -94,6 +91,7 @@ namespace Stargate.Items
 			recipe.AddTile(TileID.Bottles);
 			recipe.SetResult(ItemID.GoldOre);
 			recipe.AddRecipe();
+			*/
         }
     }
 }

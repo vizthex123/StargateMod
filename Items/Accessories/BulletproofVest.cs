@@ -15,24 +15,26 @@ namespace Stargate.Items.Accessories
 
         public override void SetDefaults()
         {
-            item.width = 20;
-            item.height = 20;
-            item.maxStack = 1;
-            //item.value = Item.sellPrice(1, 0, 0, 0);
-            item.rare = 3;
-			item.accessory = true;
+            Item.width = 20;
+            Item.height = 20;
+            Item.maxStack = 1;
+			Item.accessory = true;
+            Item.rare = ItemRarityID.Blue;
+			Item.value = Item.sellPrice(gold: 1);
         }
+		
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
 			player.statDefense += 5;
         }
+		
         public override void AddRecipes()
         {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.GetItem("Kevlar"), 10);
-			recipe.AddTile(TileID.Loom);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			CreateRecipe(1)
+				.AddIngredient<Kevlar>(10)
+				.AddRecipeGroup(RecipeGroupID.IronBar, 5)
+				.AddTile(TileID.Anvils)
+				.Register();
         }
     }
 }
