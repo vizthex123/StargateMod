@@ -1,4 +1,3 @@
-/*
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -11,25 +10,31 @@ namespace Stargate.Items.Weapons
         public override void SetStaticDefaults()
         {
 			DisplayName.SetDefault("Ma'Tok Staff");
-            Tooltip.SetDefault("[HEAVILY WIP!]\nA weapon of terror, used by all Jaffa.\nVery effective, but not very accurate.\nRequires 1 Liquid Naquadah per shot");
+            Tooltip.SetDefault("A weapon of terror, used by all Jaffa.\nVery effective, but not very accurate.\nRequires 1 Liquid Naquadah per shot");
         }
 
         public override void SetDefaults()
         {
+			Item.damage = 20;
+			Item.knockBack = 2;
+			Item.shoot = 1;
+			Item.DamageType = DamageClass.Ranged;
+			Item.shoot = ModContent.ProjectileType<Projectiles.NaquadahLaser>();
+			Item.useAmmo = ModContent.ItemType<LiquidNaquadah>();
+			Item.UseSound = SoundID.Item12;
+		    Item.shoot = 10;
+		    Item.shootSpeed = 8;
+			Item.width = 20;
+			Item.height = 20;
+			Item.scale = 1f;
+			Item.useTime = 25;
+			Item.useAnimation = 10;
+			Item.useStyle = 5;
             Item.width = 20;
             Item.height = 20;
             Item.maxStack = 1;
-            //Item.value = Item.sellPrice(0, 1, 0, 0);
-            Item.rare = 3;
-			Item.ranged = true;
-			Item.useAmmo = mod.ItemType("LiquidNaqudah");
-			Item.damage = 16;
-			Item.knockBack = 2;
-		    Item.shoot = 10;
-		    Item.shootSpeed = 8;
-			Item.useAnimation = 10;
-			Item.useStyle = 5;
-			Item.scale = 1f;
+            Item.rare = ItemRarityID.White;
+			Item.value = Item.sellPrice(copper: 0);
         }
 
         public override void AddRecipes()
@@ -39,9 +44,7 @@ namespace Stargate.Items.Weapons
 				.AddRecipeGroup(RecipeGroupID.IronBar, 8)
 			 //.AddTile(mod.TileType("GoauldCrafter"))
 				.AddTile(TileID.Anvils)
-				.Register()
+				.Register();
         }
     }
 }
-// Still heavily WIP because idk how to program weapons and projectiles and whatnot.
-*/

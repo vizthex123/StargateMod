@@ -3,14 +3,14 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 
-namespace Stargate.Items
+namespace Stargate.Items.LanteanParts
 {
-    public class ZPM : ModItem
+    public class ZPMCasing : ModItem
     {
         public override void SetStaticDefaults()
         {
-			DisplayName.SetDefault("Zero-Point Module");
-            Tooltip.SetDefault("A generator capable of producing massive amounts of energy.\nUsed to power most Ancient (Lantean) technologies.\nGets its power from zero-point energy pockets in other dimensions.\nStacks to 10");
+			DisplayName.SetDefault("Zero-Point Casing");
+            Tooltip.SetDefault("Secures Zero-Point modules so they can be used without problems arising");
         }
 
         public override void SetDefaults()
@@ -19,18 +19,21 @@ namespace Stargate.Items
             Item.height = 20;
             Item.maxStack = 10;
             Item.rare = ItemRarityID.Green;
-			Item.value = Item.sellPrice(gold: 5);
+			Item.value = Item.sellPrice(gold: 1);
         }
 
         public override void AddRecipes()
         {
 			CreateRecipe(1)
-				.AddIngredient<Circuit>(3)
-				.AddIngredient<LanteanParts.Crystal>(5)
-				.AddIngredient<LanteanParts.ControlCrystal>(4)
-				.AddIngredient<LanteanParts.BackupCrystal>(3)
-				.AddIngredient<LanteanParts.BufferCrystal>(2)
-				.AddIngredient<LanteanParts.ZPMCasing>(1)
+				.AddIngredient(ItemID.SilverBar, 5)
+				.AddIngredient<Crystal>(1)
+			 //.AddTile(mod.TileType("AncientCrafter"))
+				.AddTile(TileID.Anvils)
+				.Register();
+			
+			CreateRecipe(1)
+				.AddIngredient(ItemID.TungstenBar, 5)
+				.AddIngredient<Crystal>(1)
 			 //.AddTile(mod.TileType("AncientCrafter"))
 				.AddTile(TileID.Anvils)
 				.Register();

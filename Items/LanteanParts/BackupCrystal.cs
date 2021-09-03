@@ -3,14 +3,14 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 
-namespace Stargate.Items//.LanteanParts
+namespace Stargate.Items.LanteanParts
 {
-    public class ControlCrystal : ModItem
+    public class BackupCrystal : ModItem
     {
         public override void SetStaticDefaults()
         {
-			DisplayName.SetDefault("Control Crystal");
-            Tooltip.SetDefault("A crystal that controls most functions in Ancient technology.");
+			DisplayName.SetDefault("Auxiliary Control Crystal");
+            Tooltip.SetDefault("A crystal used as a precaution against malfunctions");
         }
 
         public override void SetDefaults()
@@ -19,25 +19,23 @@ namespace Stargate.Items//.LanteanParts
             Item.height = 20;
             Item.maxStack = 100;
             Item.rare = ItemRarityID.Blue;
-			Item.value = Item.sellPrice(silver: 50);
+			Item.value = Item.sellPrice(silver: 25);
         }
 
         public override void AddRecipes()
         {
-			CreateRecipe(1)
-				.AddIngredient<Crystal>(2)
-				.AddIngredient<Circuit>(1)
-				.AddIngredient(ItemID.GoldBar, 3)
-				.AddIngredient(ItemID.CopperBar, 1)
+			CreateRecipe(3)
+				.AddIngredient<Crystal>(4)
+				.AddIngredient(ItemID.CopperBar, 4)
+				.AddIngredient(ItemID.SilverBar, 3)
 			 //.AddTile(mod.TileType("AncientCrafter"))
 				.AddTile(TileID.Anvils)
 				.Register();
 			
-			CreateRecipe(1)
-				.AddIngredient<Crystal>(2)
-				.AddIngredient<Circuit>(1)
-				.AddIngredient(ItemID.PlatinumBar, 3)
-				.AddIngredient(ItemID.TinBar, 1)
+			CreateRecipe(3)
+				.AddIngredient<Crystal>(4)
+				.AddIngredient(ItemID.TinBar, 4)
+				.AddIngredient(ItemID.TungstenBar, 3)
 			 //.AddTile(mod.TileType("AncientCrafter"))
 				.AddTile(TileID.Anvils)
 				.Register();

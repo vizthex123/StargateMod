@@ -1,15 +1,21 @@
+using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 
-namespace Stargate.Projectiles
+namespace Stargate.Minions
 {
-	public class GliderLaser : ModProjectile
+	public class DeathGlider : ModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Naquadah Laser");
+			DisplayName.SetDefault("Death Glider");
+			ProjectileID.Sets.MinionTargettingFeature[Projectile.type] = true;
+			ProjectileID.Sets.MinionSacrificable[Projectile.type] = true;
+			//ProjectileID.Sets.Homing[Projectile.type] = true;
+			Main.projPet[Projectile.type] = true;
+			Main.projFrames[Projectile.type] = 1;
 		}
 
 		public override void SetDefaults()

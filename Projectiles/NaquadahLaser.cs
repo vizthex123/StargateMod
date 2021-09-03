@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework;
 
 namespace Stargate.Projectiles
 {
-	public class GliderLaser : ModProjectile
+	public class NaquadahLaser : ModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
@@ -15,14 +15,12 @@ namespace Stargate.Projectiles
 		public override void SetDefaults()
 		{
 			AIType = ProjectileID.GreenLaser;
-			Projectile.damage = 16;
+			Projectile.damage = 10;
 			Projectile.alpha = 100;
 			Projectile.width = 15;
 			Projectile.height = 10;
-			Projectile.penetrate = -1;
 			Projectile.friendly = true;
-			Projectile.minion = true;
-			Projectile.minionSlots = 1f;
+			Projectile.penetrate = 1;
 		}
 	}
 }

@@ -31,7 +31,7 @@ namespace Stargate.Items.Accessories
         public override void AddRecipes()
         {
 			CreateRecipe(1)
-				.AddIngredient<ZPMCasing>(1)
+				.AddIngredient<LanteanParts.ZPMCasing>(1)
 				.AddIngredient<ZPM>(1)
 			 //.AddTile(mod.TileType("AncientCrafter"))
 				.AddTile(TileID.Anvils)
