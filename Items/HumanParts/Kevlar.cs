@@ -3,7 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 
-namespace Stargate.Items//.HumanParts
+namespace Stargate.Items.HumanParts
 {
     public class Kevlar : ModItem
     {

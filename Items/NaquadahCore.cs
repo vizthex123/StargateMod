@@ -10,7 +10,7 @@ namespace Stargate.Items//.GoauldParts
         public override void SetStaticDefaults()
         {
 			DisplayName.SetDefault("Naquadah Core");
-            Tooltip.SetDefault("A power core fueled with  Naquadah");
+            Tooltip.SetDefault("A powerful energy core, fueled with Naquadah");
         }
 
         public override void SetDefaults()
@@ -26,7 +26,8 @@ namespace Stargate.Items//.GoauldParts
         {
 			CreateRecipe(1)
 				.AddIngredient<NaquadahCasing>(1)
-				.AddIngredient<NaquadahBar>(3)
+				.AddIngredient<LiquidNaquadah>(10)
+				.AddIngredient<NaquadahBar>(1)
 			 //.AddTile(mod.TileType("GoauldCrafter"))
 				.AddTile(TileID.MythrilAnvil)
 				.Register();

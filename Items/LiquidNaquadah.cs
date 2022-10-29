@@ -10,7 +10,7 @@ namespace Stargate.Items
         public override void SetStaticDefaults()
         {
 			DisplayName.SetDefault("Liquid Naquadah");
-            Tooltip.SetDefault("Weapons-grade naquadah, melted down and placed into a capsule\nHas a variety of uses, chief of which is to provide ammunition for Ma'Tok Staves");
+            Tooltip.SetDefault("Weapons-grade naquadah, liquified down and contained in a capsule\nHas a variety of uses, chief of which is to provide ammunition for Ma'Tok Staves");
         }
 
         public override void SetDefaults()
@@ -30,7 +30,7 @@ namespace Stargate.Items
 
         public override void AddRecipes()
         {
-			CreateRecipe(1)
+			CreateRecipe(4)
 				.AddIngredient<NaquadahBar>(2)
 			// .AddTile(mod.TileType("NaquadahRefiner"))
 				.AddTile(TileID.Hellforge)

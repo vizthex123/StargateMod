@@ -3,14 +3,14 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 
-namespace Stargate.Items.Accessories
+namespace Stargate.Items.Accessories.Goauld
 {
-    public class BulletproofVest : ModItem
+    public class HealthBooster : ModItem
     {
         public override void SetStaticDefaults()
         {
-			DisplayName.SetDefault("Bulletproof Vest");
-            Tooltip.SetDefault("Reinforced Kevlar that blocks some damage.\n+5 Defense");
+			DisplayName.SetDefault("Goa'uld Health Booster");
+            Tooltip.SetDefault("A device made by the Goa'uld that increases your longevity when implanted into one's heart\n+50 Max HP while equipped\nHeals wounds slightly slower than a Healing Device");
         }
 
         public override void SetDefaults()
@@ -19,20 +19,24 @@ namespace Stargate.Items.Accessories
             Item.height = 20;
             Item.maxStack = 1;
 			Item.accessory = true;
-            Item.rare = ItemRarityID.Blue;
+            Item.rare = ItemRarityID.Orange;
 			Item.value = Item.sellPrice(gold: 1);
         }
 		
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-			player.statDefense += 5;
+			player.statLifeMax2 += 50;
+			player.lifeRegen += 3;
+			// Band of Regen is 1
         }
 		
         public override void AddRecipes()
         {
 			CreateRecipe(1)
-				.AddIngredient<Kevlar>(10)
-				.AddRecipeGroup(RecipeGroupID.IronBar, 5)
+				.AddIngredient<Naquadah>(25)
+				.AddIngredient<LiquidNaquadah>(15)
+				.AddIngredient<HealingDevice>(1)
+			//	.AddTile(mod.TileType("GoauldCrafter"))
 				.AddTile(TileID.Anvils)
 				.Register();
         }
@@ -47,5 +51,3 @@ Red - Control
 Green - Auxiliary
 Orange - Regular (Crystal)
 */
-
-//Will become a piece of armour later™ but that needs a lot of sprites which I can't do.

@@ -3,14 +3,14 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 
-namespace Stargate.Items.Accessories
+namespace Stargate.Items.Accessories.Goauld
 {
-    public class GoauldHealthBooster : ModItem
+    public class HealingDevice : ModItem
     {
         public override void SetStaticDefaults()
         {
-			DisplayName.SetDefault("Goa'uld Health Booster");
-            Tooltip.SetDefault("A device made by the Goa'uld that increases your longevity when implanted into one's heart\n+50 Max HP while equipped\nHeals wounds slightly slower than a Healing Device");
+			DisplayName.SetDefault("Goa'uld Healing Device");
+            Tooltip.SetDefault("A handheld device made by the Goa'uld that helps heal wounds.\nHeals woulds five times as fast as a Band of Regeneration.");
         }
 
         public override void SetDefaults()
@@ -19,23 +19,21 @@ namespace Stargate.Items.Accessories
             Item.height = 20;
             Item.maxStack = 1;
 			Item.accessory = true;
-            Item.rare = ItemRarityID.Orange;
+            Item.rare = ItemRarityID.Green;
 			Item.value = Item.sellPrice(gold: 1);
         }
 		
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-			player.statLifeMax2 += 50;
-			player.lifeRegen += 3;
+			player.lifeRegen += 5;
 			// Band of Regen is 1
         }
 		
         public override void AddRecipes()
         {
 			CreateRecipe(1)
-				.AddIngredient<Naquadah>(25)
-				.AddIngredient<LiquidNaquadah>(15)
-				.AddIngredient<GoauldHealingDevice>(1)
+				.AddIngredient<Naquadah>(10)
+				.AddIngredient<NaquadahCasing>(1)
 			//	.AddTile(mod.TileType("GoauldCrafter"))
 				.AddTile(TileID.Anvils)
 				.Register();

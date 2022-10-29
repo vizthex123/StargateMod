@@ -10,14 +10,13 @@ namespace Stargate.Items.Weapons
         public override void SetStaticDefaults()
         {
 			DisplayName.SetDefault("Ma'Tok Staff");
-            Tooltip.SetDefault("A weapon of terror, used by all Jaffa.\nVery effective, but not very accurate.\nRequires 1 Liquid Naquadah per shot");
+            Tooltip.SetDefault("A weapon of terror, wielded by all Jaffa.\nSomewhat effective, but not very accurate.\nRequires 1 Liquid Naquadah per shot");
         }
 
         public override void SetDefaults()
         {
 			Item.damage = 20;
 			Item.knockBack = 2;
-			Item.shoot = 1;
 			Item.DamageType = DamageClass.Ranged;
 			Item.shoot = ModContent.ProjectileType<Projectiles.NaquadahLaser>();
 			Item.useAmmo = ModContent.ItemType<LiquidNaquadah>();
@@ -33,7 +32,7 @@ namespace Stargate.Items.Weapons
             Item.width = 20;
             Item.height = 20;
             Item.maxStack = 1;
-            Item.rare = ItemRarityID.White;
+            Item.rare = ItemRarityID.Blue;
 			Item.value = Item.sellPrice(copper: 0);
         }
 

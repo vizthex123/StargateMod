@@ -3,7 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 
-namespace Stargate.Items.LanteanParts
+namespace Stargate.Items.AncientParts
 {
     public class BufferCrystal : ModItem
     {

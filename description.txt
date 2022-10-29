@@ -1,14 +1,14 @@
 I made this mod because I love the Stargate franchise, and thought it would be cool to have a Terraria mod for it.
 
-It's still fairly WIP, but it does add a couple of useful accessories at the moment.
+It's still heavily WIP, but it does add a couple of useful accessories at the moment.
 
-I plan to add the main things from each faction in the show (Ancients, Goa'uld, Tau'ri (humans), and perhaps a few others)
+I plan to add the main things from each faction in the show (Ancients, Goa'uld, and Tau'ri (humans)), and perhaps a few others.
 
 Full content list:
 
-Several crafting items
-4 Accessories (Health & Defense for now)
-1 tool (pickaxe)
-2 heavily WIP weapons
-1 heavily WIP minion
-1 new ammo type (currently useless other than as a crafting component)
+- Several crafting items
+- 4 Accessories (Health & Defense for now)
+- 1 tool (pickaxe)
+- 2 heavily WIP weapons
+- 1 heavily WIP minion
+- 1 new ammo type (currently useless outisde of crafting)

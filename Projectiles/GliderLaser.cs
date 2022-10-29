@@ -15,7 +15,7 @@ namespace Stargate.Projectiles
 		public override void SetDefaults()
 		{
 			AIType = ProjectileID.GreenLaser;
-			Projectile.damage = 16;
+			Projectile.damage = 15;
 			Projectile.alpha = 100;
 			Projectile.width = 15;
 			Projectile.height = 10;

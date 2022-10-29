@@ -3,14 +3,14 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 
-namespace Stargate.Items.LanteanParts
+namespace Stargate.Items.AncientParts
 {
-    public class BackupCrystal : ModItem
+    public class Crystal : ModItem
     {
         public override void SetStaticDefaults()
         {
-			DisplayName.SetDefault("Auxiliary Control Crystal");
-            Tooltip.SetDefault("A crystal used as a precaution against malfunctions");
+			DisplayName.SetDefault("Basic Crystal");
+            Tooltip.SetDefault("A basic structural crystal used in all Ancient technology.");
         }
 
         public override void SetDefaults()
@@ -24,18 +24,16 @@ namespace Stargate.Items.LanteanParts
 
         public override void AddRecipes()
         {
-			CreateRecipe(3)
-				.AddIngredient<Crystal>(4)
-				.AddIngredient(ItemID.CopperBar, 4)
-				.AddIngredient(ItemID.SilverBar, 3)
+			CreateRecipe(12)
+				.AddIngredient(ItemID.CopperBar, 10)
+				.AddRecipeGroup(RecipeGroupID.IronBar, 15)
 			 //.AddTile(mod.TileType("AncientCrafter"))
 				.AddTile(TileID.Anvils)
 				.Register();
 			
-			CreateRecipe(3)
-				.AddIngredient<Crystal>(4)
-				.AddIngredient(ItemID.TinBar, 4)
-				.AddIngredient(ItemID.TungstenBar, 3)
+			CreateRecipe(12)
+				.AddIngredient(ItemID.TinBar, 10)
+				.AddRecipeGroup(RecipeGroupID.IronBar, 15)
 			 //.AddTile(mod.TileType("AncientCrafter"))
 				.AddTile(TileID.Anvils)
 				.Register();

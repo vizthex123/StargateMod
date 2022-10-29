@@ -10,7 +10,7 @@ namespace Stargate.Items
         public override void SetStaticDefaults()
         {
 			DisplayName.SetDefault("Weapons-Grade Naquadah");
-            Tooltip.SetDefault("A rare, super-dense mineral used for all Ancient and Goa'uld technology.\nRefined enough to be used in weaponry.\nDoesn't pack well");
+            Tooltip.SetDefault("Finely refined (and highly energetic) Naquadah, ready to be used in weaponry.\nDoesn't pack well due to its instability");
         }
 
         public override void SetDefaults()
